@@ -3,7 +3,7 @@ import MovieList from '@/movie/MovieList'
 
 function Home() {
   return (
-    <div className="">
+    <div className="w-full bg-gradient-to-br from-pink-300 via-purple-400 to-blue-300">
       <Banner></Banner>
       <section className="pb-20 movies-layout page-container">
         <h2 className="mb-10 text-3xl font-bold text-white capitalize">

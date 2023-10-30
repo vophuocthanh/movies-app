@@ -11,9 +11,8 @@ const Banner = () => {
     fetcher
   )
   const movies = data?.results || []
-  // console.log("Banner ~ movies ", movies);
   return (
-    <section className="banner h-[500px] page-container mb-20 overflow-hidden">
+    <section className="mt-14 banner h-[500px] page-container mb-20 overflow-hidden">
       <Swiper grabCursor="true" slidesPerView={'auto'}>
         {movies.length > 0 &&
           movies.map(item => (

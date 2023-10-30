@@ -7,7 +7,6 @@ import { fetcher, tmdbAPI } from '@/utils/conffig'
 // https://api.themoviedb.org/3/movie/now_playing?api_key=55e25eecd2352fcad30e9d1c0a5aa854
 // Phần Now Playing
 const MovieList = ({ type = 'now_playing' }) => {
-  // lấy đường dẫn bên file config.js
   const { data, error } = useSWR(tmdbAPI.getMovieList(type), fetcher)
   const isLoading = !data && !error
   const movies = data?.results || []

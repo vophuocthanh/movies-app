@@ -5,16 +5,13 @@ import { components, hooks, utils } from '@generouted/react-router/client'
 
 export type Path =
   | `/`
-  | `/:id`
   | `/admin`
   | `/login`
   | `/movie`
   | `/movie/:id`
   | `/movies`
-  | `/search`
 
 export type Params = {
-  '/:id': { id: string }
   '/movie/:id': { id: string }
 }
 

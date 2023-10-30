@@ -4,6 +4,7 @@ import { Checkbox } from '@/components/ui/Checkbox'
 import { useToast } from '@/components/ui/use-toast'
 import { Link, useNavigate } from '@/router'
 import Logo from '../assets/logo.jpg'
+import bg from '@/assets/footer-bg.jpg'
 
 export default function Login() {
   const navigate = useNavigate()
@@ -27,15 +28,21 @@ export default function Login() {
   }
 
   return (
-    <div className="flex items-center justify-center h-screen">
+    <div
+      className="flex items-center justify-center h-screen"
+      style={{ backgroundImage: `url(${bg})` }}
+    >
       <Link to="/">
         <img
-          className="w-[200px] h-[80px] absolute top-8 left-8"
+          className="w-[200px] h-[80px] absolute top-8 left-8 rounded-lg"
           src={Logo}
           alt="Movies"
         />
       </Link>
-      <form className="w-1/4 flex flex-col items-center" onSubmit={onSubmit}>
+      <form
+        className="w-1/4 flex flex-col items-center bg-white p-10 rounded-md"
+        onSubmit={onSubmit}
+      >
         <div className="text-center mb-4">
           <h2 className="text-3xl font-semibold mb-4">Sign In</h2>
         </div>
@@ -52,7 +59,7 @@ export default function Login() {
             <span className="ml-2">Remember Me</span>
           </label>
         </div>
-        <Button className="w-48" type="submit">
+        <Button className="w-48 text-white" type="submit" variant="primary">
           Sign In
         </Button>
       </form>

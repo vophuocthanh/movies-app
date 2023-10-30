@@ -16,22 +16,16 @@ const MovieCard = ({ item }) => {
         className="object-cover w-full h-[250px] rounded-lg mb-5"
       />
       <div className="flex flex-col flex-1">
-        <h3 className="mb-3 text-xl font-bold">{title}</h3>
+        <div className="w-64 overflow-hidden">
+          <h3 className="mb-3 truncate group text-xl font-bold">{title}</h3>
+        </div>
         <div className="flex items-center justify-between mb-10 text-sm opacity-50">
           <span>{new Date(release_date).getFullYear()}</span>
           <span>{vote_average}</span>
         </div>
-        {/* tối ưu button */}
-        <Button onClick={() => navigate(`/movie/${id}`)} variant="secondary">
+        <Button onClick={() => navigate(`/movie/${id}`)} variant="primary">
           Watch Now
         </Button>
-        {/* cách chưa tối ưu */}
-        {/* <button
-          onClick={() => navigate(`/movie/${id}`)}
-          className="w-full px-6 py-3 mt-auto capitalize rounded-lg bg-primary"
-        >
-          Watch Now
-        </button> */}
       </div>
     </div>
   )
