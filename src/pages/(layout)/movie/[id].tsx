@@ -1,14 +1,16 @@
 import MovieCard from '@/movie/MovieCard'
 import { fetcher, tmdbAPI } from '@/utils/conffig'
-import React from 'react'
+import React, { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { SwiperSlide, Swiper } from 'swiper/react'
 import useSWR from 'swr'
 
 // https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>
 const MovieDetailsPage = () => {
+  useEffect(() => {
+    document.title = 'Movies App | Movie Details'
+  }, [])
   const { movieId } = useParams()
-  // đường dẫn bên file config.js
   const { data } = useSWR(tmdbAPI.getMovieDetails(movieId), fetcher)
   console.log('MovieDetailsPage ~ data', data)
   if (!data) return null
@@ -19,7 +21,6 @@ const MovieDetailsPage = () => {
         <div className="absolute inset-0 bg-black bg-opacity-70"></div>
         <div
           className="w-full h-full bg-no-repeat bg-cover"
-          // background ở trang chi tiết
           style={{
             backgroundImage: `url(${tmdbAPI.imageBackground(backdrop_path)})`
           }}

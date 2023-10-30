@@ -1,7 +1,11 @@
 import Banner from '@/components/Banner'
 import MovieList from '@/movie/MovieList'
+import { useEffect } from 'react'
 
 function Home() {
+  useEffect(() => {
+    document.title = 'Movies App | Home'
+  }, [])
   return (
     <div className="w-full bg-gradient-to-br from-pink-300 via-purple-400 to-blue-300">
       <Banner></Banner>

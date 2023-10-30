@@ -12,6 +12,9 @@ import { Button } from '@/components/ui/Button'
 const itemsPerPage = 20
 
 const MoviesPage = () => {
+  useEffect(() => {
+    document.title = 'Movies App | Movies'
+  }, [])
   const [pageCount, setPageCount] = useState(0)
   const [itemOffset, setItemOffset] = useState(0)
   const [nextPage, setNextPage] = useState(1)

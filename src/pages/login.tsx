@@ -5,8 +5,12 @@ import { useToast } from '@/components/ui/use-toast'
 import { Link, useNavigate } from '@/router'
 import Logo from '../assets/logo.jpg'
 import bg from '@/assets/footer-bg.jpg'
+import { useEffect } from 'react'
 
 export default function Login() {
+  useEffect(() => {
+    document.title = 'Login'
+  }, [])
   const navigate = useNavigate()
   const { toast } = useToast()
 
