@@ -26,6 +26,7 @@ const MoviesPage = () => {
   }
   const { data, error } = useSWR(url, fetcher)
   const loading = !data && !error
+
   useEffect(() => {
     if (filterDebounce) {
       setUrl(tmdbAPI.getMovieSearch(filterDebounce, nextPage))
@@ -33,27 +34,27 @@ const MoviesPage = () => {
       setUrl(tmdbAPI.getMovieList('popular', nextPage))
     }
   }, [filterDebounce, nextPage])
+
   const movies = data?.results || []
+
   useEffect(() => {
     if (!data || !data.total_results) return
     setPageCount(Math.ceil(data.total_results / itemsPerPage))
   }, [data, itemOffset])
-  // hàm panigaion
+
   const handlePageClick = event => {
-    // khi mà click vào thì sẽ dựa vào event.selected( số )
     const newOffset = (event.selected * itemsPerPage) % data.total_results
-    // newOffset để hiển thị dấu ba chấm ( ... )
     setItemOffset(newOffset)
     setNextPage(event.selected + 1)
   }
   console.log(data)
   return (
-    <div className="pb-10 sm:py-10 page-container ">
+    <div className="pb-10 mx-4 sm:py-10 page-container md:mx-auto">
       <main
-        className="relative px-8 py-72 rounded mb-6 bg-top bg-no-repeat bg-cover"
+        className="relative px-8 mb-6 bg-top bg-no-repeat bg-cover rounded py-72"
         style={{ backgroundImage: `url(${bg})` }}
       ></main>
-      <div className="flex mb-10">
+      <div className="flex mx-4 mb-10 md:mx-auto">
         <div className="flex-1">
           <input
             onChange={handleFilterChange}
@@ -62,7 +63,7 @@ const MoviesPage = () => {
             placeholder="Type here to search..."
           />
         </div>
-        <Button className="p-4 text-white h-14 rounded-none" variant="primary">
+        <Button className="p-4 text-white rounded-none h-14" variant="primary">
           <svg
             xmlns="http://www.w3.org/2000/svg"
             fill="none"
@@ -94,13 +95,13 @@ const MoviesPage = () => {
       <div className="mt-10 ">
         <ReactPaginate
           breakLabel="..."
-          nextLabel=">>"
+          nextLabel=">"
           onPageChange={handlePageClick}
           pageRangeDisplayed={3}
           pageCount={pageCount}
-          previousLabel="<<"
+          previousLabel="<"
           renderOnZeroPageCount={null}
-          className="pagination text-white text-xl font-medium"
+          className="flex gap-0 text-sm font-medium text-white pagination md:text-xl"
         />
       </div>
     </div>

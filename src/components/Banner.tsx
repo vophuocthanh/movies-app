@@ -1,6 +1,5 @@
 import useSWR from 'swr'
 import { SwiperSlide, Swiper } from 'swiper/react'
-// import Button from '../button/Button'
 import { useNavigate } from 'react-router-dom'
 import { fetcher } from '@/utils/conffig'
 import { Button } from './ui/Button'
@@ -49,12 +48,9 @@ function BannerItem({ item }) {
             Drama
           </span>
         </div>
-        <Button onClick={() => navigate(`/movie/${id}`)} variant="primary">
+        <Button onClick={() => navigate(`/movies/${id}`)} variant="primary">
           Watch Now
         </Button>
-        {/* <button className="px-6 py-3 font-medium text-white rounded-lg bg-primary">
-          Watch Now
-        </button> */}
       </div>
     </div>
   )

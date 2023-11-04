@@ -17,20 +17,19 @@ const MovieCard = ({ item }) => {
       />
       <div className="flex flex-col flex-1">
         <div className="w-64 overflow-hidden">
-          <h3 className="mb-3 truncate group text-xl font-bold">{title}</h3>
+          <h3 className="mb-3 text-xl font-bold truncate group">{title}</h3>
         </div>
         <div className="flex items-center justify-between mb-10 text-sm opacity-50">
           <span>{new Date(release_date).getFullYear()}</span>
           <span>{vote_average}</span>
         </div>
-        <Button onClick={() => navigate(`/movie/${id}`)} variant="primary">
+        <Button onClick={() => navigate(`/movies/${id}`)} variant="primary">
           Watch Now
         </Button>
       </div>
     </div>
   )
 }
-// function xử lý lỗi
 function FallbackComponent() {
   return (
     <p className="text-red-400 bg-red-50">

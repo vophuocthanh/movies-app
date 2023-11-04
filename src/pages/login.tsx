@@ -44,11 +44,11 @@ export default function Login() {
         />
       </Link>
       <form
-        className="w-1/4 flex flex-col items-center bg-white p-10 rounded-md"
+        className="flex flex-col items-center w-1/4 p-10 bg-white rounded-md md:w-1/2 sm:h-1/4 md:h-1/3"
         onSubmit={onSubmit}
       >
-        <div className="text-center mb-4">
-          <h2 className="text-3xl font-semibold mb-4">Sign In</h2>
+        <div className="mb-4 text-center">
+          <h2 className="mb-4 text-3xl font-semibold">Sign In</h2>
         </div>
         <Input placeholder="Email" className="mb-4" name="email" />
         <Input
@@ -58,7 +58,7 @@ export default function Login() {
           name="password"
         />
         <div className="flex justify-between w-full mb-6">
-          <label className=" text-gray-400 ">
+          <label className="text-gray-400 ">
             <Checkbox />
             <span className="ml-2">Remember Me</span>
           </label>

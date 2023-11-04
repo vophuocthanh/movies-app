@@ -1,0 +1,71 @@
+import { fetcher, tmdbAPI } from '@/utils/conffig'
+import { useEffect } from 'react'
+import { useParams } from 'react-router-dom'
+import { useQuery } from 'react-query'
+import MovieSimilar from '@/movie/MovieSimilar'
+import MovieCredits from '@/movie/MovieCredits'
+import MovieVideos from '@/movie/MovieVideos'
+
+// https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>
+const MovieDetailsPage = () => {
+  useEffect(() => {
+    document.title = 'Movies App | Movie Details'
+  }, [])
+  const { movieId } = useParams()
+  const { data } = useQuery(['movieDetails', movieId], () =>
+    fetcher(tmdbAPI.getMovieDetails(movieId))
+  )
+
+  if (!data) return null
+
+  const { backdrop_path, poster_path, title, genres, overview } = data
+  return (
+    <div className="py-10">
+      <div className="w-full h-[600px] relative">
+        <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+        <div
+          className="w-full h-full bg-no-repeat bg-cover"
+          style={{
+            backgroundImage: `url(${tmdbAPI.imageBackground(backdrop_path)})`
+          }}
+        ></div>
+      </div>
+      <div className="w-full h-[400px] max-w-[800px] mx-auto -mt-[200px] relative z-10 pb-10">
+        <img
+          src={tmdbAPI.imageOriginal(poster_path)}
+          alt=""
+          className="object-cover w-full h-full rounded-xl"
+        />
+      </div>
+      <h1 className="mx-2 mb-10 text-4xl font-bold text-center text-white md:mx-0">
+        {title}
+      </h1>
+      {genres ? (
+        genres.length > 0 ? (
+          <div className="flex flex-col items-center justify-center gap-5 mb-10 font-bold text-center sm:flex sm:flex-row">
+            {genres.map(item => (
+              <span
+                key={item.id}
+                className="flex items-center justify-center px-4 py-2 my-4 text-white border rounded-md w-44 border-primary text-primary"
+              >
+                {item.name}
+              </span>
+            ))}
+          </div>
+        ) : (
+          <p>Không có thể loại nào.</p>
+        )
+      ) : (
+        <p>Loading...</p>
+      )}
+      <p className="text-center leading-relaxed max-w-[600px] mx-auto mb-10">
+        {overview}
+      </p>
+      <MovieCredits></MovieCredits>
+      <MovieVideos></MovieVideos>
+      <MovieSimilar></MovieSimilar>
+    </div>
+  )
+}
+
+export default MovieDetailsPage

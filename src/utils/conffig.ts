@@ -1,7 +1,7 @@
 export const fetcher = (...args) => fetch(...args).then(res => res.json())
-export const apiKey = '55e25eecd2352fcad30e9d1c0a5aa854'
-const tmdbEndpoint = 'https://api.themoviedb.org/3/movie'
-const tmdbEndpointSearch = 'https://api.themoviedb.org/3/search/movie'
+export const apiKey = import.meta.env.VITE_API_KEY
+const tmdbEndpoint = import.meta.env.VITE_HTPPS_MOVIE
+const tmdbEndpointSearch = import.meta.env.VITE_HTPPS_MOVIE_SEARCH
 export const tmdbAPI = {
   getMovieList: (type, page = 1) =>
     `${tmdbEndpoint}/${type}?api_key=${apiKey}&page=${page}`,
@@ -9,7 +9,6 @@ export const tmdbAPI = {
   getCredits: movieId => `${tmdbEndpoint}/${movieId}/credits?api_key=${apiKey}`,
   getVideo: movieId => `${tmdbEndpoint}/${movieId}/videos?api_key=${apiKey}`,
   getSimilar: movieId => `${tmdbEndpoint}/${movieId}/similar?api_key=${apiKey}`,
-  // chức năng search
   getMovieSearch: (
     query,
     page
