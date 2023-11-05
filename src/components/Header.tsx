@@ -13,10 +13,10 @@ function Header() {
   }
   return (
     <div className="main-content">
-      <header className="flex items-center justify-around pb-3 h-[110px] mb-5 text-white header gap-x-5 z-[999] bg-gradient-to-br from-pink-300 via-purple-400 to-blue-300">
+      <header className="flex items-center justify-around pb-3 h-28 mb-5 text-white header gap-x-5 z-[999] bg-gradient-to-br from-pink-300 via-purple-400 to-blue-300">
         <Link to="/">
           <img
-            className="w-[120px] rounded-xl h-[40px] sm:w-56 sm:h-16"
+            className="w-30 rounded-xl h-10 sm:w-56 sm:h-16"
             src={Logo}
             alt="Movies"
           />
@@ -45,14 +45,14 @@ function Header() {
           </ul>
         </div>
         <img
-          className="w-12 h-12 ml-6 mr-6 cursor-pointer md:hidden"
+          className="w-10 h-10 ml-2 mr-6 cursor-pointer md:hidden"
           onClick={handleToggler}
           src={Hambeger}
           alt="bugger"
         />
         <Drawer open={isToggler} onClose={handleToggler}>
           <div className="mx-5">
-            <img src={Logo} alt="logo" className="w-[320px] h-20" />
+            <img src={Logo} alt="logo" className="w-80 h-20" />
           </div>
           <div className="flex flex-col gap-6 mx-5 text-3xl font-bold my-7">
             <NavLink

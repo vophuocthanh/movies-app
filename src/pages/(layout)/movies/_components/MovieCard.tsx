@@ -13,7 +13,7 @@ const MovieCard = ({ item }) => {
       <img
         src={tmdbAPI.image500(item.poster_path)}
         alt=""
-        className="object-cover w-full h-[250px] rounded-lg mb-5"
+        className="object-cover w-full h-63 rounded-lg mb-5"
       />
       <div className="flex flex-col flex-1">
         <div className="w-64 overflow-hidden">
@@ -65,7 +65,7 @@ export const MovieCardSkeleton = () => {
         </div>
         <LoadingSkeleton
           width="100%"
-          height="45px"
+          height="2.85rem"
           radius="6px"
         ></LoadingSkeleton>
       </div>

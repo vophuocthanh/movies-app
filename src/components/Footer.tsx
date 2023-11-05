@@ -9,10 +9,10 @@ const Footer = () => {
       className="relative mt-2 px-8 py-24 bg-top bg-no-repeat bg-cover"
       style={{ backgroundImage: `url(${bg})` }}
     >
-      <div className="max-w-[1000px] mx-auto">
+      <div className="max-w-250 mx-auto">
         <div className="flex items-center justify-center mb-12">
           <div className="logo">
-            <img src={logo} className="w-[300px] rounded-xl h-[100px]" alt="" />
+            <img src={logo} className="w-75 rounded-xl h-25" alt="" />
             <Link to="/">tMovies</Link>
           </div>
         </div>

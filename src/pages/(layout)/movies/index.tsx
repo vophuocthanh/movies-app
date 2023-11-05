@@ -1,12 +1,14 @@
 import React, { useEffect, useState } from 'react'
-import useSWR from 'swr'
 import { v4 } from 'uuid'
 import { fetcher, tmdbAPI } from '@/utils/conffig'
-import MovieCard, { MovieCardSkeleton } from '@/movie/MovieCard'
+import MovieCard, {
+  MovieCardSkeleton
+} from '@/pages/(layout)/movies/_components/MovieCard'
 import useDebounce from '@/hooks/useDebounce'
 import bg from '@/assets/banner.png'
 import ReactPaginate from 'react-paginate'
 import { Button } from '@/components/ui/Button'
+import { useQuery } from 'react-query'
 // https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>
 
 const itemsPerPage = 20
@@ -24,7 +26,7 @@ const MoviesPage = () => {
   const handleFilterChange = e => {
     setFilter(e.target.value)
   }
-  const { data, error } = useSWR(url, fetcher)
+  const { data, error } = useQuery(['movies', itemOffset], () => fetcher(url))
   const loading = !data && !error
 
   useEffect(() => {

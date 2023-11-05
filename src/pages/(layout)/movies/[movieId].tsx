@@ -2,9 +2,9 @@ import { fetcher, tmdbAPI } from '@/utils/conffig'
 import { useEffect } from 'react'
 import { useParams } from 'react-router-dom'
 import { useQuery } from 'react-query'
-import MovieSimilar from '@/movie/MovieSimilar'
-import MovieCredits from '@/movie/MovieCredits'
-import MovieVideos from '@/movie/MovieVideos'
+import MovieCredits from './_components/MovieCredits'
+import MovieVideos from './_components/MovieVideos'
+import MovieSimilar from './_components/MovieSimilar'
 
 // https://api.themoviedb.org/3/movie/{movie_id}?api_key=<<api_key>>
 const MovieDetailsPage = () => {
@@ -21,16 +21,16 @@ const MovieDetailsPage = () => {
   const { backdrop_path, poster_path, title, genres, overview } = data
   return (
     <div className="py-10">
-      <div className="w-full h-[600px] relative">
-        <div className="absolute inset-0 bg-black bg-opacity-70"></div>
+      <div className="w-full h-150 relative">
+        <div className="absolute inset-0 bg-black bg-opacity-70 object-cover"></div>
         <div
-          className="w-full h-full bg-no-repeat bg-cover"
+          className="w-full h-full bg-no-repeat bg-cover object-cover"
           style={{
             backgroundImage: `url(${tmdbAPI.imageBackground(backdrop_path)})`
           }}
         ></div>
       </div>
-      <div className="w-full h-[400px] max-w-[800px] mx-auto -mt-[200px] relative z-10 pb-10">
+      <div className="w-full h-100 max-w-200 mx-auto -mt-[200px] relative z-10 pb-10">
         <img
           src={tmdbAPI.imageOriginal(poster_path)}
           alt=""
@@ -58,7 +58,7 @@ const MovieDetailsPage = () => {
       ) : (
         <p>Loading...</p>
       )}
-      <p className="text-center leading-relaxed max-w-[600px] mx-auto mb-10">
+      <p className="text-center leading-relaxed max-w-150 mx-auto mb-10">
         {overview}
       </p>
       <MovieCredits></MovieCredits>

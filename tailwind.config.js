@@ -75,6 +75,29 @@ module.exports = {
       animation: {
         'accordion-down': 'accordion-down 0.2s ease-out',
         'accordion-up': 'accordion-up 0.2s ease-out'
+      },
+      height: {
+        25: '6.25rem',
+        20: '5rem',
+        28: '7.5rem',
+        63: '15.625rem',
+        88: '21.875rem',
+        100: '25rem',
+        150: '37.5rem'
+      },
+      width: {
+        30: '7.5rem',
+        50: '12.5rem',
+        75: '18.75rem',
+        80: '20rem'
+      },
+      maxWidth: {
+        150: '37.5rem',
+        200: '50rem',
+        250: '62.5rem'
+      },
+      marginTop: {
+        '-50': '-12.5rem'
       }
     }
   },

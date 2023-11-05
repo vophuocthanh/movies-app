@@ -18,7 +18,7 @@ export default function MovieCredits() {
           <div className="cast-item" key={item.id}>
             <img
               src={tmdbAPI.imageOriginal(item.profile_path)}
-              className="w-full h-[350px] object-cover rounded-lg mb-3"
+              className="w-full h-88 object-cover rounded-lg mb-3"
               alt=""
             />
             <h3 className="text-xl font-medium text-center">{item.name}</h3>

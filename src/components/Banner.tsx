@@ -1,13 +1,12 @@
-import useSWR from 'swr'
 import { SwiperSlide, Swiper } from 'swiper/react'
 import { useNavigate } from 'react-router-dom'
 import { fetcher } from '@/utils/conffig'
 import { Button } from './ui/Button'
+import { useQuery } from 'react-query'
 
 const Banner = () => {
-  const { data } = useSWR(
-    `https://api.themoviedb.org/3/movie/upcoming?api_key=55e25eecd2352fcad30e9d1c0a5aa854`,
-    fetcher
+  const { data } = useQuery('banner', () =>
+    fetcher(import.meta.env.VITE_API_UPCOMMING)
   )
   const movies = data?.results || []
   return (

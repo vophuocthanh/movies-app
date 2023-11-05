@@ -12,7 +12,6 @@ export default function MovieSimilar() {
   if (!data) return null
   const { results } = data
   if (!results || results.length <= 0) return null
-  console.log('MovieSimilar ~ data', data)
   return (
     <div className="px-4 py-10 md:px-10">
       <h2 className="mb-10 text-3xl font-medium">Similar movies</h2>
