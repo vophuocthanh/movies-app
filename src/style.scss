@@ -83,10 +83,6 @@
     max-width: 1344px;
     @apply mx-auto;
   }
-  // .page-container-fluid {
-  //   max-width: 1440px;
-  //   @apply mx-auto;
-  // }
   .movie-list .swiper-slide {
     width: 300px;
     height: auto;
@@ -95,7 +91,6 @@
     .movie-list .swiper-slide {
       width: 340px;
       height: auto;
-      // margin-left: 20px;
     }
   }
   .banner .swiper {
@@ -140,27 +135,4 @@ header {
   top: 0;
   left: 0;
   right: 0;
-}
-
-@media screen and (max-width: 768px) {
-  .main-content {
-    padding-top: 100px;
-  }
-}
-.main-content {
-  background: rgb(238, 174, 202);
-  background: radial-gradient(
-    circle,
-    rgba(238, 174, 202, 1) 0%,
-    rgba(202, 206, 217, 1) 11%,
-    rgba(222, 176, 208, 1) 18%,
-    rgba(210, 178, 212, 1) 31%,
-    rgba(199, 180, 216, 1) 43%,
-    rgba(189, 181, 219, 1) 54%,
-    rgba(185, 182, 220, 1) 58%,
-    rgba(170, 184, 225, 1) 75%,
-    rgba(203, 183, 187, 0.5691526610644257) 86%,
-    rgba(148, 187, 233, 1) 100%
-  );
-  padding-top: 110px;
 }

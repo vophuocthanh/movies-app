@@ -12,8 +12,8 @@ function Header() {
     setIsToggler(isToggler => !isToggler)
   }
   return (
-    <div className="main-content">
-      <header className="flex items-center justify-around pb-3 h-28 mb-5 text-white header gap-x-5 z-[999] bg-gradient-to-br from-pink-300 via-purple-400 to-blue-300">
+    <div className="bg-gradient-to-br from-pink-300 via-gray-200 to-blue-300 md:pt-24 pt-25">
+      <header className="flex items-center justify-around h-20 sm:h-28 mb-5 text-white header gap-x-5 z-[999] bg-gradient-to-br from-pink-300 via-purple-400 to-blue-300">
         <Link to="/">
           <img
             className="w-30 rounded-xl h-10 sm:w-56 sm:h-16"

@@ -98,6 +98,10 @@ module.exports = {
       },
       marginTop: {
         '-50': '-12.5rem'
+      },
+      paddingTop: {
+        25: '6.25rem',
+        28: '6.875rem'
       }
     }
   },
