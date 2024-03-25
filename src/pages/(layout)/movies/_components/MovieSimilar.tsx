@@ -14,7 +14,7 @@ export default function MovieSimilar() {
   if (!results || results.length <= 0) return null
   return (
     <div className="px-4 py-10 md:px-10">
-      <h2 className="mb-10 text-3xl font-medium">Similar movies</h2>
+      <h2 className="mb-10 text-3xl font-medium text-white">Similar movies</h2>
       <div className="movie-list">
         <Swiper grabCursor={'true'} spaceBetween={40} slidesPerView={'auto'}>
           {results.length > 0 &&

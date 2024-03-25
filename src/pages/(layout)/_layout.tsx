@@ -4,7 +4,7 @@ import Footer from '@/components/Footer'
 
 export default function Layout() {
   return (
-    <div className="bg-gradient-to-br from-pink-300 via-purple-400 to-blue-300">
+    <div className="bg-slate-900">
       <Header />
       <Outlet />
       <Footer />

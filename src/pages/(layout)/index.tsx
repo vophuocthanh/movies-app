@@ -25,7 +25,7 @@ function Home() {
     document.title = 'Movies App | Home'
   }, [])
   return (
-    <div className="w-full bg-gradient-to-br from-pink-300 via-purple-400 to-blue-300">
+    <div className="w-full bg-slate-900">
       <Banner></Banner>
       {MovieLists.map(item => (
         <section

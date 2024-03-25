@@ -12,11 +12,11 @@ function Header() {
     setIsToggler(isToggler => !isToggler)
   }
   return (
-    <div className="bg-gradient-to-br from-pink-300 via-gray-200 to-blue-300 md:pt-24 pt-25">
-      <header className="flex items-center justify-around h-20 sm:h-28 mb-5 text-white header gap-x-5 z-[999] bg-gradient-to-br from-pink-300 via-purple-400 to-blue-300">
+    <div className="bg-slate-900 md:pt-24 pt-25">
+      <header className="flex items-center justify-around h-20 sm:h-28 mb-5 text-white header gap-x-5 z-[999] bg-slate-900">
         <Link to="/">
           <img
-            className="w-30 rounded-xl h-10 sm:w-56 sm:h-16"
+            className="h-10 w-30 rounded-xl sm:w-56 sm:h-16"
             src={Logo}
             alt="Movies"
           />
@@ -52,7 +52,7 @@ function Header() {
         />
         <Drawer open={isToggler} onClose={handleToggler}>
           <div className="mx-5">
-            <img src={Logo} alt="logo" className="w-80 h-20" />
+            <img src={Logo} alt="logo" className="h-20 w-80" />
           </div>
           <div className="flex flex-col gap-6 mx-5 text-3xl font-bold my-7">
             <NavLink

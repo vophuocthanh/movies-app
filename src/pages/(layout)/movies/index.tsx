@@ -9,7 +9,6 @@ import bg from '@/assets/banner.png'
 import ReactPaginate from 'react-paginate'
 import { Button } from '@/components/ui/Button'
 import { useQuery } from 'react-query'
-// https://api.themoviedb.org/3/search/movie?api_key=<<api_key>>
 
 const itemsPerPage = 20
 
@@ -49,7 +48,6 @@ const MoviesPage = () => {
     setItemOffset(newOffset)
     setNextPage(event.selected + 1)
   }
-  console.log(data)
   return (
     <div className="pb-10 mx-4 sm:py-10 page-container md:mx-auto">
       <main

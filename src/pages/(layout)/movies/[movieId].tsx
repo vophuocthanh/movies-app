@@ -13,7 +13,7 @@ const MovieDetailsPage = () => {
   }, [])
   const { movieId } = useParams()
   const { data } = useQuery(['movieDetails', movieId], () =>
-    fetcher(tmdbAPI.getMovieDetails(movieId))
+    fetcher(tmdbAPI.getMovie(movieId))
   )
 
   if (!data) return null
@@ -21,10 +21,10 @@ const MovieDetailsPage = () => {
   const { backdrop_path, poster_path, title, genres, overview } = data
   return (
     <div className="py-10">
-      <div className="w-full h-150 relative">
-        <div className="absolute inset-0 bg-black bg-opacity-70 object-cover"></div>
+      <div className="relative w-full h-150">
+        <div className="absolute inset-0 object-cover bg-black bg-opacity-70"></div>
         <div
-          className="w-full h-full bg-no-repeat bg-cover object-cover"
+          className="object-cover w-full h-full bg-no-repeat bg-cover"
           style={{
             backgroundImage: `url(${tmdbAPI.imageBackground(backdrop_path)})`
           }}
@@ -58,7 +58,7 @@ const MovieDetailsPage = () => {
       ) : (
         <p>Loading...</p>
       )}
-      <p className="text-center leading-relaxed max-w-150 mx-auto mb-10">
+      <p className="mx-auto mb-10 leading-relaxed text-center text-white max-w-150">
         {overview}
       </p>
       <MovieCredits></MovieCredits>
